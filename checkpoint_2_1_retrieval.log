@@ -1,0 +1,93 @@
+[2026-08-29T22:47:00] QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 29.06), ('1985_NBA_Finals', '1985 NBA Finals', 26.387), ('1986_NBA_Finals', '1986 NBA Finals', 25.94), ('1981_NBA_Finals', '1981 NBA Finals', 25.92), ('1983_NBA_Finals', '1983 NBA Finals', 25.884)]
+answer=The **1984 NBA Finals** were the championship round of the NBA’s 1983–84 season. The **Boston Celtics defeated the Los Angeles Lakers, 4–3**.
+
+From the document:
+
+- “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games.**”
+- “**Celtics forward Larry Bird averaged 27 points and 14 rebounds a game during the series, earning the NBA Finals Most Valuable Player (MVP).**”
+- “**After alternating wins with the Lakers, the Celtics won Game 7 and the series with a score of 111–102.**”
+
+Key details:
+- **Dates:** May 27–June 12
+- **MVP:** **Larry Bird**
+- **Series result:** Celtics 4, Lakers 3
+------------------------------------------------------------------------
+[2026-08-29T22:47:05] QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 37.194), ('1989_NBA_Finals', '1989 NBA Finals', 34.115), ('1988_NBA_Finals', '1988 NBA Finals', 33.985), ('1981_NBA_Finals', '1981 NBA Finals', 33.907), ('1985_NBA_Finals', '1985 NBA Finals', 33.788)]
+answer=The **Boston Celtics** won the 1984 NBA Finals. The document says: “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games**.”
+------------------------------------------------------------------------
+[2026-08-29T22:47:10] QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 56.363), ('John_Snow', 'John Snow', 41.226), ('Miasma_theory', 'Miasma theory', 36.924), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 30.148), ('Helen_Clark', 'Helen Clark', 21.874)]
+answer=The documents say the 1854 Broad Street cholera outbreak was “a severe outbreak of cholera” in Soho, London, and that it was “best known for the physician John Snow’s study of its causes.”
+
+Key details from the documents:
+
+- Date/location: “1854” in “Soho, London, UK.”
+- Deaths: “616”
+- Cause listed in the document: “Vibrio cholerae present within the pumping water due to contamination by sewage”
+- Significance: Snow linked the outbreak to “the public water pump on Broad Street” and this work “is regarded as the founding event of epidemiology.”
+
+If you want, I can also summarize John Snow’s investigation of the outbreak.
+------------------------------------------------------------------------
+[2026-08-29T22:47:15] QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 65.502), ('John_Snow', 'John Snow', 47.952), ('Miasma_theory', 'Miasma theory', 46.349), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 39.769), ('Helen_Clark', 'Helen Clark', 28.984)]
+answer=The document says the outbreak was caused by **contaminated water from the Broad Street pump**. In the outbreak summary, the cause is listed as: **“Vibrio cholerae present within the pumping water due to contamination by sewage.”** It also says Snow identified **“the public water pump on Broad Street”** as the source.
+
+
+------------------------------------------------------------------------
+[2026-08-29T22:47:20] QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 30.049), ('Alaska', 'Alaska', 23.779), ('Lists_of_earthquakes', 'Lists of earthquakes', 21.737), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 19.264), ('John_Muir', 'John Muir', 18.183)]
+answer=The 1964 Alaska earthquake was the **“Great Alaska earthquake”** and the **“Good Friday earthquake.”** It occurred on **March 27, 1964, at 5:36 PM AKST** and had a magnitude of **M w 9.2–9.3**.
+
+From the document: it was the **“second most powerful earthquake ever recorded in the world”** and caused **about 139 deaths**. It also triggered major tsunamis and severe damage across Alaska and beyond.
+
+If you want, I can also give a **short summary**, **causes**, or **effects** of the earthquake from the documents.
+------------------------------------------------------------------------
+[2026-08-30T12:36:11] QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 29.06), ('1985_NBA_Finals', '1985 NBA Finals', 26.387), ('1986_NBA_Finals', '1986 NBA Finals', 25.94), ('1981_NBA_Finals', '1981 NBA Finals', 25.92), ('1983_NBA_Finals', '1983 NBA Finals', 25.884)]
+answer=The **1984 NBA Finals** were the championship round of the NBA’s **1983–84 season**. The **Boston Celtics defeated the Los Angeles Lakers in seven games**.
+
+Key facts from the document:
+- **Team/coach/wins:** “Boston Celtics K.C. Jones 4” and “Los Angeles Lakers Pat Riley 3”
+- **Dates:** “May 27–June 12”
+- **MVP:** “Larry Bird (Boston Celtics)”
+- The series ended with Boston winning Game 7, **111–102**: “the Celtics won Game 7 and the series with a score of 111–102.”
+
+If you want, I can also summarize the games or give the series result in a different format.
+------------------------------------------------------------------------
+[2026-08-30T12:36:16] QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 37.194), ('1989_NBA_Finals', '1989 NBA Finals', 34.115), ('1988_NBA_Finals', '1988 NBA Finals', 33.985), ('1981_NBA_Finals', '1981 NBA Finals', 33.907), ('1985_NBA_Finals', '1985 NBA Finals', 33.788)]
+answer=The **Boston Celtics** won the 1984 NBA Finals. The document says: **“The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games.”**
+------------------------------------------------------------------------
+[2026-08-30T12:36:22] QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 56.363), ('John_Snow', 'John Snow', 41.226), ('Miasma_theory', 'Miasma theory', 36.924), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 30.148), ('Helen_Clark', 'Helen Clark', 21.874)]
+answer=The document says the **1854 Broad Street cholera outbreak** was a severe cholera outbreak in Soho, London, in 1854. It “**killed 616 people**” and is “**best known for the physician John Snow's study of its causes**,” which led him to conclude that **contaminated water from the Broad Street pump** was the source, “**rather than something in the air called ‘miasma.’**”
+
+It also states:
+
+- “**Cause: Vibrio cholerae present within the pumping water due to contamination by sewage**”
+- “**By talking to local residents... Snow identified the outbreak's source as the public water pump on Broad Street**”
+- The pump handle was removed, and “**the handle of the pump was removed on the following day**.”
+
+If you want, I can also summarize the outbreak’s investigation in 2–3 sentences.
+------------------------------------------------------------------------
+[2026-08-30T12:36:26] QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 65.502), ('John_Snow', 'John Snow', 47.952), ('Miasma_theory', 'Miasma theory', 46.349), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 39.769), ('Helen_Clark', 'Helen Clark', 28.984)]
+answer=The documents say the outbreak was caused by contaminated pump water from Broad Street: the cause was **“Vibrio cholerae present within the pumping water due to contamination by sewage.”** 
+
+They also say Snow identified **“the public water pump on Broad Street”** as the source, and later it was discovered the well had been dug **“3 feet (0.9 m) from an old cesspit”** that had begun to leak fecal bacteria.
+------------------------------------------------------------------------
+[2026-08-30T12:36:33] QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 30.049), ('Alaska', 'Alaska', 23.779), ('Lists_of_earthquakes', 'Lists of earthquakes', 21.737), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 19.264), ('John_Muir', 'John Muir', 18.183)]
+answer=The **1964 Alaska earthquake**—also called the **Great Alaska earthquake** and **Good Friday earthquake**—occurred on **March 27, 1964**, at **5:36 PM AKST**. It had a magnitude of **M w 9.2–9.3** and lasted **4–5 minutes**.
+
+A few key facts from the document:
+
+- It was a **“megathrust earthquake”**
+- It is described as the **“second most powerful earthquake ever recorded in the world since modern seismography began in 1900”**
+- It caused **about 139 deaths**
+- It generated a **major tsunami**, with a **run-up of 67 m (220 ft) at Shoup Bay, Alaska**
+
+If you want, I can also summarize its effects on Anchorage, tsunamis, or recovery efforts.
+------------------------------------------------------------------------

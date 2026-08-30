@@ -1,0 +1,8 @@
+langchain-openai
+langchain-core
+python-dotenv
+
+# Required for the checkpoint baseline:
+# - langchain-openai: OpenRouter-backed LLM access
+# - langchain-core: message types and shared LangChain core functionality
+# - python-dotenv: loads OPENROUTER_API_KEY from a local .env file
