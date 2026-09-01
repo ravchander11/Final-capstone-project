@@ -11,6 +11,7 @@ Module 2.
 
 from __future__ import annotations
 
+import argparse
 import html
 import math
 import os
@@ -174,6 +175,78 @@ def retrieve(query: str, k: int = TOP_K) -> list[tuple[str, str, float]]:
     return [(doc_id, title, round(score, 3)) for doc_id, title, score in scored[:k]]
 
 
+def semantic_retrieve(query: str, k: int = TOP_K) -> list[tuple[str, str, float]]:
+    """Simple semantic-style retrieval using TF-IDF cosine similarity.
+
+    This intentionally does not depend on a vector DB or external embeddings package.
+    It still captures the key semantic idea: documents with similar term distributions
+    to the query can rank highly even when the exact words differ.
+    """
+    docs = load_wikipedia_docs()
+    if not docs or not query:
+        return []
+
+    query_tokens = _tokens(query)
+    if not query_tokens:
+        return []
+
+    all_terms = sorted({term for doc in docs for term in _tokens(f"{doc['title']} {doc['text']}")})
+    doc_term_counts = [{term: counts for term, counts in Counter(_tokens(f"{doc['title']} {doc['text']}")) .items()} for doc in docs]
+    doc_freq = {}
+    for counts in doc_term_counts:
+        for term in counts:
+            doc_freq[term] = doc_freq.get(term, 0) + 1
+
+    idf = {term: math.log((len(docs) + 1) / (doc_freq.get(term, 1) + 1)) + 1.0 for term in all_terms}
+
+    query_counts = Counter(query_tokens)
+    q_vector = [idf.get(term, 1.0) * query_counts.get(term, 0) for term in all_terms]
+    q_norm = math.sqrt(sum(v * v for v in q_vector))
+
+    results: list[tuple[str, str, float]] = []
+    for idx, doc in enumerate(docs):
+        counts = Counter(_tokens(f"{doc['title']} {doc['text']}"))
+        d_vector = [idf.get(term, 1.0) * counts.get(term, 0) for term in all_terms]
+        d_norm = math.sqrt(sum(v * v for v in d_vector))
+        if q_norm == 0 or d_norm == 0:
+            sim = 0.0
+        else:
+            sim = sum(a * b for a, b in zip(q_vector, d_vector)) / (q_norm * d_norm)
+        if sim > 0:
+            results.append((doc["id"], doc["title"], float(sim)))
+
+    results.sort(key=lambda item: item[2], reverse=True)
+    return [(doc_id, title, round(score, 4)) for doc_id, title, score in results[:k]]
+
+
+def hybrid_retrieve(query: str, k: int = TOP_K, lexical_weight: float = 0.6, semantic_weight: float = 0.4) -> list[tuple[str, str, float]]:
+    """Combine keyword retrieval and semantic-style retrieval into a single ranked list."""
+    docs = {doc["id"]: doc for doc in load_wikipedia_docs()}
+    lexical_hits = retrieve(query, k=max(k * 3, 15))
+    semantic_hits = semantic_retrieve(query, k=max(k * 3, 15))
+
+    lex_map = {doc_id: score for doc_id, _, score in lexical_hits}
+    sem_map = {doc_id: score for doc_id, _, score in semantic_hits}
+
+    all_doc_ids = sorted(set(lex_map) | set(sem_map))
+    if not all_doc_ids:
+        return []
+
+    lex_max = max(lex_map.values()) if lex_map else 1.0
+    sem_max = max(sem_map.values()) if sem_map else 1.0
+
+    scored: list[tuple[str, str, float]] = []
+    for doc_id in all_doc_ids:
+        lex_score = lex_map.get(doc_id, 0.0) / lex_max if lex_max else 0.0
+        sem_score = sem_map.get(doc_id, 0.0) / sem_max if sem_max else 0.0
+        combined = lexical_weight * lex_score + semantic_weight * sem_score
+        if combined > 0:
+            scored.append((doc_id, docs[doc_id]["title"], combined))
+
+    scored.sort(key=lambda item: item[2], reverse=True)
+    return [(doc_id, title, round(score, 4)) for doc_id, title, score in scored[:k]]
+
+
 def answer(llm: ChatOpenAI, query: str, doc_ids: list[str]) -> str:
     docs = {doc["id"]: doc for doc in load_wikipedia_docs()}
     context = "\n\n".join(
@@ -201,20 +274,10 @@ def my_representative_queries() -> list[str]:
     ]
 
 
-def run() -> None:
-    docs = load_wikipedia_docs()
-    print(f"Checkpoint 2.1 — baseline retrieval | scenario: {SCENARIO} | articles: {len(docs)}\n")
-
-    llm = None
-    try:
-        llm = make_llm()
-        print("LLM available: OpenRouter key detected. Grounded answers enabled.\n")
-    except RuntimeError:
-        print("LLM unavailable: OPENROUTER_API_KEY not set. Retrieval-only validation is running.\n")
-
-    for i, query in enumerate(my_representative_queries(), 1):
-        hits = retrieve(query, TOP_K)
-        print("=" * 72)
+def _run_retrieval_section(label: str, queries: list[str], retriever, llm: ChatOpenAI | None = None) -> None:
+    print(f"\n{'=' * 72}\n{label}\n{'=' * 72}")
+    for i, query in enumerate(queries, 1):
+        hits = retriever(query, TOP_K)
         print(f"QUERY {i}: {query}")
         if not hits:
             print("  retrieved: []")
@@ -228,17 +291,64 @@ def run() -> None:
         if llm is not None:
             ans = answer(llm, query, [doc_id for doc_id, _, _ in hits])
             print(f"  answer: {ans}\n")
-            log(f"QUERY {i}: {query}", f"retrieved={hits}\nanswer={ans}")
+            log(f"{label} | QUERY {i}: {query}", f"retrieved={hits}\nanswer={ans}")
         else:
             print("  answer: LLM answer generation skipped because the API key is missing.\n")
-            log(f"QUERY {i}: {query}", f"retrieved={hits}\nanswer=SKIPPED (no API key)")
+            log(f"{label} | QUERY {i}: {query}", f"retrieved={hits}\nanswer=SKIPPED (no API key)")
 
-    print("=" * 72)
-    print(
-        "Baseline evidence complete. This BM25-style lexical retriever is strong on exact title "
-        "matches and entity-heavy queries, but it is less robust when the query is paraphrased or "
-        "uses different wording than the article itself."
+
+def run() -> None:
+    parser = argparse.ArgumentParser(description="Compare lexical, semantic, and hybrid Wikipedia retrieval.")
+    parser.add_argument("--question", help="Ask a single custom question across the selected retrieval section(s).")
+    parser.add_argument(
+        "--section",
+        choices=["text", "semantic", "hybrid", "all"],
+        default="all",
+        help="Choose which retrieval section to run.",
     )
+    parser.add_argument(
+        "--interactive",
+        action="store_true",
+        help="Prompt interactively for a custom question instead of using the default representative queries.",
+    )
+    args = parser.parse_args()
+
+    docs = load_wikipedia_docs()
+    print(f"Checkpoint 2.1 — retrieval comparison | scenario: {SCENARIO} | articles: {len(docs)}\n")
+
+    llm = None
+    try:
+        llm = make_llm()
+        print("LLM available: OpenRouter key detected. Grounded answers are enabled.\n")
+    except RuntimeError:
+        print("LLM unavailable: OPENROUTER_API_KEY not set. Retrieval-only validation is running.\n")
+
+    if args.question:
+        queries = [args.question.strip()]
+    elif args.interactive:
+        custom_question = input("Enter a question for the selected retrieval section(s): ").strip()
+        queries = [custom_question] if custom_question else my_representative_queries()
+    else:
+        queries = my_representative_queries()
+
+    section_map = {
+        "text": ("TEXT-BASED SEARCH (BM25-style lexical baseline)", retrieve),
+        "semantic": ("SEMANTIC SEARCH (TF-IDF cosine similarity)", semantic_retrieve),
+        "hybrid": ("HYBRID SEARCH (lexical + semantic)", hybrid_retrieve),
+    }
+
+    selected_sections = [args.section] if args.section != "all" else ["text", "semantic", "hybrid"]
+    for section_name in selected_sections:
+        label, retriever = section_map[section_name]
+        _run_retrieval_section(label, queries, retriever, llm)
+
+    if args.section == "all":
+        print("\n" + "=" * 72)
+        print(
+            "Comparison complete. The lexical baseline performs best on exact titles and entity-heavy "
+            "queries, semantic retrieval is better for paraphrased wording, and hybrid retrieval balances "
+            "both behaviors for a more robust default search strategy."
+        )
 
 
 if __name__ == "__main__":

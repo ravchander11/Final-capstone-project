@@ -91,3 +91,489 @@ A few key facts from the document:
 
 If you want, I can also summarize its effects on Anchorage, tsunamis, or recovery efforts.
 ------------------------------------------------------------------------
+[2026-08-31T16:03:04] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 29.06), ('1985_NBA_Finals', '1985 NBA Finals', 26.387), ('1986_NBA_Finals', '1986 NBA Finals', 25.94), ('1981_NBA_Finals', '1981 NBA Finals', 25.92), ('1983_NBA_Finals', '1983 NBA Finals', 25.884)]
+answer=The **1984 NBA Finals** were the championship round of the NBA’s 1983–84 season. The **Boston Celtics defeated the Los Angeles Lakers in seven games**, with the deciding Game 7 ending **111–102** for Boston.
+
+A few key facts from the document:
+- **Champion:** Boston Celtics
+- **Runner-up:** Los Angeles Lakers
+- **Series result:** Celtics won **4–3**
+- **MVP:** **Larry Bird**
+- The article says Bird “**averaged 27 points and 14 rebounds a game during the series, earning the NBA Finals Most Valuable Player (MVP)**.”
+
+If you want, I can also summarize the series game by game.
+------------------------------------------------------------------------
+[2026-08-31T16:03:08] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 37.194), ('1989_NBA_Finals', '1989 NBA Finals', 34.115), ('1988_NBA_Finals', '1988 NBA Finals', 33.985), ('1981_NBA_Finals', '1981 NBA Finals', 33.907), ('1985_NBA_Finals', '1985 NBA Finals', 33.788)]
+answer=The **Boston Celtics** won the 1984 NBA Finals. The document states: **“The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games.”**
+------------------------------------------------------------------------
+[2026-08-31T16:03:16] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 56.363), ('John_Snow', 'John Snow', 41.226), ('Miasma_theory', 'Miasma theory', 36.924), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 30.148), ('Helen_Clark', 'Helen Clark', 21.874)]
+answer=The documents say the 1854 Broad Street cholera outbreak was “a severe outbreak of cholera” in Soho, London, that “killed 616 people.” It is “best known for the physician John Snow’s study of its causes” and his “hypothesis that germ-contaminated water was the cause, rather than something in the air called ‘miasma.’”
+
+They also say the outbreak source was identified as “the public water pump on Broad Street,” and that “the handle of the pump was removed” after Snow presented his findings.
+------------------------------------------------------------------------
+[2026-08-31T16:03:20] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 65.502), ('John_Snow', 'John Snow', 47.952), ('Miasma_theory', 'Miasma theory', 46.349), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 39.769), ('Helen_Clark', 'Helen Clark', 28.984)]
+answer=The outbreak was caused by contaminated pump water. The Broad Street article says the cause was: **“Vibrio cholerae present within the pumping water due to contamination by sewage.”** It also says Snow identified **“the public water pump on Broad Street”** as the source.
+------------------------------------------------------------------------
+[2026-08-31T16:03:29] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 30.049), ('Alaska', 'Alaska', 23.779), ('Lists_of_earthquakes', 'Lists of earthquakes', 21.737), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 19.264), ('John_Muir', 'John Muir', 18.183)]
+answer=The 1964 Alaska earthquake was “also known as the Great Alaska earthquake and Good Friday earthquake.” It “occurred at 5:36 PM AKST on Good Friday, March 27, 1964,” had a magnitude of “M w 9.2–9.3,” lasted “four minutes and thirty-eight seconds,” and was “the most powerful earthquake ever recorded in North America” and “the second most powerful earthquake ever recorded in the world since modern seismography began in 1900.”
+
+It caused about “139 deaths,” plus major tsunamis and damage across Alaska and beyond.
+------------------------------------------------------------------------
+[2026-08-31T16:18:37] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 1: 1984 NBA Finals
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5515), ('2019–20_NBA_season', '2019–20 NBA season', 0.5047), ('2020–21_NBA_season', '2020–21 NBA season', 0.4632), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4094), ('1986_NBA_Finals', '1986 NBA Finals', 0.3808)]
+answer=The documents do not contain information about the **1984 NBA Finals** specifically.
+
+They do mention related context, such as:
+- In the NBA history article: the Celtics and Lakers played in **three NBA Finals (1984, 1985, and 1987)**.
+- In the 1986 Finals article: the Celtics had lost the **1985 NBA Finals** to the Lakers.
+
+But there is **no dedicated document or summary for the 1984 NBA Finals** in the provided materials.
+------------------------------------------------------------------------
+[2026-08-31T16:35:28] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 29.06), ('1985_NBA_Finals', '1985 NBA Finals', 26.387), ('1986_NBA_Finals', '1986 NBA Finals', 25.94), ('1981_NBA_Finals', '1981 NBA Finals', 25.92), ('1983_NBA_Finals', '1983 NBA Finals', 25.884)]
+answer=The **1984 NBA Finals** were the championship series of the NBA’s **1983–84 season**. The **Boston Celtics defeated the Los Angeles Lakers in seven games**, and **Larry Bird** was named **Finals MVP**.
+
+Key details from the document:
+- “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games**.”
+- “**Celtics forward Larry Bird averaged 27 points and 14 rebounds a game during the series, earning the NBA Finals Most Valuable Player (MVP)**.”
+- Final game score: “**Boston wins the series, 4–3**” and “**111–102**.”
+
+If you want, I can also summarize the game-by-game results.
+------------------------------------------------------------------------
+[2026-08-31T16:35:33] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 37.194), ('1989_NBA_Finals', '1989 NBA Finals', 34.115), ('1988_NBA_Finals', '1988 NBA Finals', 33.985), ('1981_NBA_Finals', '1981 NBA Finals', 33.907), ('1985_NBA_Finals', '1985 NBA Finals', 33.788)]
+answer=The **Boston Celtics** won the 1984 NBA Finals. The document states: **“The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games.”**
+------------------------------------------------------------------------
+[2026-08-31T16:35:39] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 56.363), ('John_Snow', 'John Snow', 41.226), ('Miasma_theory', 'Miasma theory', 36.924), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 30.148), ('Helen_Clark', 'Helen Clark', 21.874)]
+answer=The 1854 Broad Street cholera outbreak was “a severe outbreak of cholera” that occurred “in 1854 near Broad Street (now Broadwick Street) and Golden Square in Soho, London, England.” It “killed 616 people.”
+
+From the document:
+
+- “A severe outbreak of cholera occurred in 1854 near Broad Street (now Broadwick Street) and Golden Square in Soho, London, England”
+- “Deaths 616”
+- It is “best known for the physician John Snow’s study of its causes and his hypothesis that germ-contaminated water was the cause, rather than something in the air called ‘miasma.’”
+
+The outbreak source was linked to the Broad Street pump: Snow “identified the outbreak's source as the public water pump on Broad Street,” and the authorities removed the pump handle.
+------------------------------------------------------------------------
+[2026-08-31T16:35:44] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 65.502), ('John_Snow', 'John Snow', 47.952), ('Miasma_theory', 'Miasma theory', 46.349), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 39.769), ('Helen_Clark', 'Helen Clark', 28.984)]
+answer=The outbreak was caused by contaminated water from the Broad Street pump. The document says the cause was: “**Vibrio cholerae present within the pumping water due to contamination by sewage**.”
+
+It also explains that the well had been dug “**3 feet (0.9 m) from an old cesspit**” that “**had begun to leak faecal bacteria**.”
+------------------------------------------------------------------------
+[2026-08-31T16:35:51] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 30.049), ('Alaska', 'Alaska', 23.779), ('Lists_of_earthquakes', 'Lists of earthquakes', 21.737), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 19.264), ('John_Muir', 'John Muir', 18.183)]
+answer=The 1964 Alaska earthquake was also called the **“Great Alaska earthquake”** and the **“Good Friday earthquake.”** It **“occurred at 5:36 PM AKST on Good Friday, March 27, 1964”** and was a **“magnitude 9.2–9.3 megathrust earthquake.”** It was **“the most powerful earthquake ever recorded in North America”** and caused about **139 deaths**. 
+
+If you want, I can also summarize its **tsunami, damage, or recovery efforts** from the documents.
+------------------------------------------------------------------------
+[2026-08-31T16:35:54] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5901), ('2019–20_NBA_season', '2019–20 NBA season', 0.5192), ('2020–21_NBA_season', '2020–21 NBA season', 0.4736), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4557), ('1986_NBA_Finals', '1986 NBA Finals', 0.4074)]
+answer=The documents do **not** say who won the 1984 NBA Finals.
+
+They do mention that the Boston Celtics won in 1986, and refer to “three NBA Finals (1984, 1985, and 1987),” but they do not state the 1984 winner.
+------------------------------------------------------------------------
+[2026-08-31T16:37:34] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 29.06), ('1985_NBA_Finals', '1985 NBA Finals', 26.387), ('1986_NBA_Finals', '1986 NBA Finals', 25.94), ('1981_NBA_Finals', '1981 NBA Finals', 25.92), ('1983_NBA_Finals', '1983 NBA Finals', 25.884)]
+------------------------------------------------------------------------
+[2026-08-31T16:37:38] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 37.194), ('1989_NBA_Finals', '1989 NBA Finals', 34.115), ('1988_NBA_Finals', '1988 NBA Finals', 33.985), ('1981_NBA_Finals', '1981 NBA Finals', 33.907), ('1985_NBA_Finals', '1985 NBA Finals', 33.788)]
+------------------------------------------------------------------------
+[2026-08-31T16:37:43] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 56.363), ('John_Snow', 'John Snow', 41.226), ('Miasma_theory', 'Miasma theory', 36.924), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 30.148), ('Helen_Clark', 'Helen Clark', 21.874)]
+------------------------------------------------------------------------
+[2026-08-31T16:37:47] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 65.502), ('John_Snow', 'John Snow', 47.952), ('Miasma_theory', 'Miasma theory', 46.349), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 39.769), ('Helen_Clark', 'Helen Clark', 28.984)]
+------------------------------------------------------------------------
+[2026-08-31T16:37:51] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 30.049), ('Alaska', 'Alaska', 23.779), ('Lists_of_earthquakes', 'Lists of earthquakes', 21.737), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 19.264), ('John_Muir', 'John Muir', 18.183)]
+------------------------------------------------------------------------
+[2026-08-31T16:39:42] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 1: 1984 NBA Finals
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5515), ('2019–20_NBA_season', '2019–20 NBA season', 0.5047), ('2020–21_NBA_season', '2020–21 NBA season', 0.4632), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4094), ('1986_NBA_Finals', '1986 NBA Finals', 0.3808)]
+answer=The provided documents do not contain information about the **1984 NBA Finals** specifically.
+
+They do mention related finals, for example:
+- In the NBA history article: “Larry Bird was named the Finals MVP” for the **1986 NBA Finals**, and it references the Celtics’ and Lakers’ Finals matchups in the 1980s.
+- The 1986 Finals article says the Celtics’ and Lakers’ rivalry included the **1985 NBA Finals** and **1987 NBA Finals**, but not 1984.
+
+If you want, I can answer a question about the 1984 NBA Finals only if you provide a document that contains it.
+------------------------------------------------------------------------
+[2026-08-31T16:40:06] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5804), ('John_Snow', 'John Snow', 0.3241), ('Miasma_theory', 'Miasma theory', 0.1418), ('List_of_tallest_buildings_in_San_Francisco', 'List of tallest buildings in San Francisco', 0.0633), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.0467)]
+answer=The **1854 Broad Street cholera outbreak** was a “**severe outbreak of cholera**” that occurred “**in 1854 near Broad Street (now Broadwick Street) and Golden Square in Soho, London, England**” during the “**1846–1860 cholera pandemic**.”
+
+Key facts from the document:
+- It “**killed 616 people**.”
+- It is “**best known for the physician John Snow’s study of its causes**.”
+- Snow hypothesized that “**germ-contaminated water was the cause, rather than something in the air called ‘miasma’**.”
+- The document lists the cause as: “**Vibrio cholerae present within the pumping water due to contamination by sewage**.”
+
+The outbreak section also says:
+- “**On 31 August 1854** ... there was a major outbreak of cholera in Soho.”
+- Snow and others “**identified the outbreak’s source as the public water pump on Broad Street**.”
+- Authorities “**disable[d] the pump by removing its handle**.”
+
+If you want, I can also give a short summary of **John Snow’s investigation** or **why the outbreak mattered historically**.
+------------------------------------------------------------------------
+[2026-08-31T16:41:15] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 29.06), ('1985_NBA_Finals', '1985 NBA Finals', 26.387), ('1986_NBA_Finals', '1986 NBA Finals', 25.94), ('1981_NBA_Finals', '1981 NBA Finals', 25.92), ('1983_NBA_Finals', '1983 NBA Finals', 25.884)]
+------------------------------------------------------------------------
+[2026-08-31T16:41:19] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 37.194), ('1989_NBA_Finals', '1989 NBA Finals', 34.115), ('1988_NBA_Finals', '1988 NBA Finals', 33.985), ('1981_NBA_Finals', '1981 NBA Finals', 33.907), ('1985_NBA_Finals', '1985 NBA Finals', 33.788)]
+------------------------------------------------------------------------
+[2026-08-31T16:41:23] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 56.363), ('John_Snow', 'John Snow', 41.226), ('Miasma_theory', 'Miasma theory', 36.924), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 30.148), ('Helen_Clark', 'Helen Clark', 21.874)]
+------------------------------------------------------------------------
+[2026-08-31T16:41:27] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 65.502), ('John_Snow', 'John Snow', 47.952), ('Miasma_theory', 'Miasma theory', 46.349), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 39.769), ('Helen_Clark', 'Helen Clark', 28.984)]
+------------------------------------------------------------------------
+[2026-08-31T16:41:31] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 30.049), ('Alaska', 'Alaska', 23.779), ('Lists_of_earthquakes', 'Lists of earthquakes', 21.737), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 19.264), ('John_Muir', 'John Muir', 18.183)]
+------------------------------------------------------------------------
+[2026-08-31T16:43:26] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5901), ('2019–20_NBA_season', '2019–20 NBA season', 0.5192), ('2020–21_NBA_season', '2020–21 NBA season', 0.4736), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4557), ('1986_NBA_Finals', '1986 NBA Finals', 0.4074)]
+answer=The provided documents do not say who won the 1984 NBA Finals. They only mention that the 1986 NBA Finals had Celtics–Lakers Finals in **1984, 1985, and 1987**, but not the 1984 winner.
+------------------------------------------------------------------------
+[2026-08-31T16:44:11] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5968), ('John_Snow', 'John Snow', 0.3496), ('Miasma_theory', 'Miasma theory', 0.1947), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.1006), ('City_of_London', 'City of London', 0.089)]
+answer=The documents say the outbreak was caused by contaminated pump water: the cause was “**Vibrio cholerae present within the pumping water due to contamination by sewage**.”
+
+They also say the Broad Street pump well had been dug “**3 feet (0.9 m) from an old cesspit**” that had begun to leak faecal bacteria, and that waste from a baby with cholera had drained into it.
+------------------------------------------------------------------------
+[2026-08-31T16:45:00] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 1: 1984 NBA Finals
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5515), ('2019–20_NBA_season', '2019–20 NBA season', 0.5047), ('2020–21_NBA_season', '2020–21 NBA season', 0.4632), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4094), ('1986_NBA_Finals', '1986 NBA Finals', 0.3808)]
+------------------------------------------------------------------------
+[2026-08-31T16:46:47] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5804), ('John_Snow', 'John Snow', 0.3241), ('Miasma_theory', 'Miasma theory', 0.1418), ('List_of_tallest_buildings_in_San_Francisco', 'List of tallest buildings in San Francisco', 0.0633), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.0467)]
+answer=The documents describe the **1854 Broad Street cholera outbreak** as a severe cholera outbreak in **Soho, London**, in **1854**. It “**killed 616 people**” and is “**best known for the physician John Snow’s study of its causes**” and his hypothesis that “**germ-contaminated water was the cause, rather than something in the air called ‘miasma’**.”
+
+Key details from the document:
+- “**On 31 August 1854** … there was a major outbreak of cholera in Soho.”
+- “**By the end of the outbreak, 616 people had died.**”
+- Snow identified “**the public water pump on Broad Street**” as the source.
+- The outbreak’s cause is given as “**Vibrio cholerae present within the pumping water due to contamination by sewage**.”
+
+If you want, I can also summarize John Snow’s investigation in a few lines.
+------------------------------------------------------------------------
+[2026-08-31T16:47:10] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 29.06), ('1985_NBA_Finals', '1985 NBA Finals', 26.387), ('1986_NBA_Finals', '1986 NBA Finals', 25.94), ('1981_NBA_Finals', '1981 NBA Finals', 25.92), ('1983_NBA_Finals', '1983 NBA Finals', 25.884)]
+------------------------------------------------------------------------
+[2026-08-31T16:47:14] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 37.194), ('1989_NBA_Finals', '1989 NBA Finals', 34.115), ('1988_NBA_Finals', '1988 NBA Finals', 33.985), ('1981_NBA_Finals', '1981 NBA Finals', 33.907), ('1985_NBA_Finals', '1985 NBA Finals', 33.788)]
+------------------------------------------------------------------------
+[2026-08-31T16:47:18] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 56.363), ('John_Snow', 'John Snow', 41.226), ('Miasma_theory', 'Miasma theory', 36.924), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 30.148), ('Helen_Clark', 'Helen Clark', 21.874)]
+------------------------------------------------------------------------
+[2026-08-31T16:47:22] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 65.502), ('John_Snow', 'John Snow', 47.952), ('Miasma_theory', 'Miasma theory', 46.349), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 39.769), ('Helen_Clark', 'Helen Clark', 28.984)]
+------------------------------------------------------------------------
+[2026-08-31T16:47:26] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 30.049), ('Alaska', 'Alaska', 23.779), ('Lists_of_earthquakes', 'Lists of earthquakes', 21.737), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 19.264), ('John_Muir', 'John Muir', 18.183)]
+------------------------------------------------------------------------
+[2026-08-31T16:48:05] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 0.589), ('Alaska', 'Alaska', 0.4488), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.3187), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.2883), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.2075)]
+answer=The documents say the **1964 Alaska earthquake** occurred on **March 27, 1964**, at **5:36 PM AKST**, and was also called the **“Great Alaska earthquake”** and **“Good Friday earthquake.”** It was a **magnitude 9.2–9.3 megathrust earthquake** and lasted **“four minutes and thirty-eight seconds.”**  
+
+It caused **about 139 deaths** in Alaska and the Pacific Northwest; the Alaska article says: **“Across south-central Alaska, ground fissures, collapsing structures, and tsunamis resulting from the earthquake caused about 139 deaths.”**  
+
+It is described as the **“second most powerful earthquake ever recorded in the world since modern seismography began in 1900.”**
+------------------------------------------------------------------------
+[2026-08-31T16:48:32] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5901), ('2019–20_NBA_season', '2019–20 NBA season', 0.5192), ('2020–21_NBA_season', '2020–21 NBA season', 0.4736), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4557), ('1986_NBA_Finals', '1986 NBA Finals', 0.4074)]
+------------------------------------------------------------------------
+[2026-08-31T16:51:06] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5968), ('John_Snow', 'John Snow', 0.3496), ('Miasma_theory', 'Miasma theory', 0.1947), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.1006), ('City_of_London', 'City of London', 0.089)]
+answer=The documents say the outbreak was caused by contaminated pump water: the cause was **“Vibrio cholerae present within the pumping water due to contamination by sewage.”** The Broad Street pump was identified as the source, and Snow’s investigation pointed to the public water pump on Broad Street.
+------------------------------------------------------------------------
+[2026-08-31T16:52:00] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 1: 1984 NBA Finals
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5515), ('2019–20_NBA_season', '2019–20 NBA season', 0.5047), ('2020–21_NBA_season', '2020–21 NBA season', 0.4632), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4094), ('1986_NBA_Finals', '1986 NBA Finals', 0.3808)]
+------------------------------------------------------------------------
+[2026-08-31T16:53:17] HYBRID SEARCH (lexical + semantic) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 0.8627), ('National_Basketball_Association', 'National Basketball Association', 0.8379), ('1986_NBA_Finals', '1986 NBA Finals', 0.8118), ('1985_NBA_Finals', '1985 NBA Finals', 0.809), ('2019–20_NBA_season', '2019–20 NBA season', 0.802)]
+answer=The 1984 NBA Finals were won by the Boston Celtics, who defeated the Los Angeles Lakers in seven games.
+
+From the document:
+- “The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games.”
+- “After alternating wins with the Lakers, the Celtics won Game 7 and the series with a score of 111–102.”
+- “MVP Larry Bird (Boston Celtics)”
+------------------------------------------------------------------------
+[2026-08-31T16:53:28] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5804), ('John_Snow', 'John Snow', 0.3241), ('Miasma_theory', 'Miasma theory', 0.1418), ('List_of_tallest_buildings_in_San_Francisco', 'List of tallest buildings in San Francisco', 0.0633), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.0467)]
+------------------------------------------------------------------------
+[2026-08-31T17:08:10] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 0.589), ('Alaska', 'Alaska', 0.4488), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.3187), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.2883), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.2075)]
+answer=The 1964 Alaska earthquake was “the Great Alaska earthquake” or “Good Friday earthquake.” It “occurred at 5:36 PM AKST on Good Friday, March 27, 1964.”
+
+Key facts from the documents:
+- Magnitude: “M w 9.2–9.3”
+- Duration: “Lasting four minutes and thirty-eight seconds”
+- Type: “Megathrust”
+- Deaths: “139 deaths” / “about 139 deaths”
+- Tsunami: “Major. Run-up of 67 m (220 ft) at Shoup Bay, Alaska.”
+- Damage: “Total damage $311 million (1964 USD)” and “Property damage was estimated at $116 million.”
+
+The Alaska article also says it “killed 133 people” and that it was “the fourth-most-powerful earthquake in recorded history,” but the dedicated earthquake article gives the more detailed figure of 139 deaths.
+------------------------------------------------------------------------
+[2026-08-31T17:08:25] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 1: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5901), ('2019–20_NBA_season', '2019–20 NBA season', 0.5192), ('2020–21_NBA_season', '2020–21 NBA season', 0.4736), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4557), ('1986_NBA_Finals', '1986 NBA Finals', 0.4074)]
+answer=The provided documents do not say who won the 1984 NBA Finals. They mention the 1984 Finals only as a past matchup: “they later played against each other in three NBA Finals (1984, 1985, and 1987),” but no winner is given.
+------------------------------------------------------------------------
+[2026-08-31T17:09:15] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5901), ('2019–20_NBA_season', '2019–20 NBA season', 0.5192), ('2020–21_NBA_season', '2020–21 NBA season', 0.4736), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4557), ('1986_NBA_Finals', '1986 NBA Finals', 0.4074)]
+------------------------------------------------------------------------
+[2026-08-31T17:10:18] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5968), ('John_Snow', 'John Snow', 0.3496), ('Miasma_theory', 'Miasma theory', 0.1947), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.1006), ('City_of_London', 'City of London', 0.089)]
+------------------------------------------------------------------------
+[2026-08-31T17:10:26] HYBRID SEARCH (lexical + semantic) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.8886), ('1984_NBA_Finals', '1984 NBA Finals', 0.8626), ('2019–20_NBA_season', '2019–20 NBA season', 0.8233), ('1989_NBA_Finals', '1989 NBA Finals', 0.8081), ('1986_NBA_Finals', '1986 NBA Finals', 0.8078)]
+answer=The **Boston Celtics** won the 1984 NBA Finals. The document says: “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games**,” and the series result lists **Boston Celtics 4, Los Angeles Lakers 3**.
+------------------------------------------------------------------------
+[2026-08-31T17:13:00] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 1: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5901), ('2019–20_NBA_season', '2019–20 NBA season', 0.5192), ('2020–21_NBA_season', '2020–21 NBA season', 0.4736), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4557), ('1986_NBA_Finals', '1986 NBA Finals', 0.4074)]
+answer=The documents do **not** state who won the 1984 NBA Finals.
+
+They do mention that the **1986 NBA Finals** were between the Celtics and Rockets, and that the Celtics “**won**” that series, but there is no direct answer in the provided documents for the **1984 NBA Finals** winner.
+------------------------------------------------------------------------
+[2026-08-31T17:13:33] HYBRID SEARCH (lexical + semantic) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 0.8627), ('National_Basketball_Association', 'National Basketball Association', 0.8379), ('1986_NBA_Finals', '1986 NBA Finals', 0.8118), ('1985_NBA_Finals', '1985 NBA Finals', 0.809), ('2019–20_NBA_season', '2019–20 NBA season', 0.802)]
+answer=The 1984 NBA Finals were won by the **Boston Celtics**, who defeated the **Los Angeles Lakers** **4–3**.
+
+From the document: “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games**,” and “**the Celtics won Game 7 and the series with a score of 111–102**.” The Finals MVP was **Larry Bird**.
+------------------------------------------------------------------------
+[2026-08-31T17:14:22] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5804), ('John_Snow', 'John Snow', 0.3241), ('Miasma_theory', 'Miasma theory', 0.1418), ('List_of_tallest_buildings_in_San_Francisco', 'List of tallest buildings in San Francisco', 0.0633), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.0467)]
+------------------------------------------------------------------------
+[2026-08-31T17:15:20] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 0.589), ('Alaska', 'Alaska', 0.4488), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.3187), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.2883), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.2075)]
+------------------------------------------------------------------------
+[2026-08-31T17:15:50] HYBRID SEARCH (lexical + semantic) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6622), ('Miasma_theory', 'Miasma theory', 0.4908), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3433), ('City_of_London', 'City of London', 0.2473)]
+answer=The outbreak was a severe cholera outbreak in Soho, London, in 1854. It “killed 616 people” and is “best known for the physician John Snow’s study of its causes and his hypothesis that germ-contaminated water was the cause, rather than something in the air called ‘miasma.’”
+
+A few key details from the documents:
+- “On 31 August 1854… there was a major outbreak of cholera in Soho.”
+- “By the end of the outbreak, 616 people had died.”
+- Snow identified “the public water pump on Broad Street” as the source.
+- The pump was disabled by “removing its handle.”
+
+If you want, I can also summarize John Snow’s investigation or explain why this outbreak mattered for public health.
+------------------------------------------------------------------------
+[2026-08-31T17:18:57] HYBRID SEARCH (lexical + semantic) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.8886), ('1984_NBA_Finals', '1984 NBA Finals', 0.8626), ('2019–20_NBA_season', '2019–20 NBA season', 0.8233), ('1989_NBA_Finals', '1989 NBA Finals', 0.8081), ('1986_NBA_Finals', '1986 NBA Finals', 0.8078)]
+answer=The **Boston Celtics** won the 1984 NBA Finals. The document says, “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games**,” and the series summary shows “**Boston wins the series, 4–3**.”
+------------------------------------------------------------------------
+[2026-08-31T17:19:46] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5968), ('John_Snow', 'John Snow', 0.3496), ('Miasma_theory', 'Miasma theory', 0.1947), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.1006), ('City_of_London', 'City of London', 0.089)]
+------------------------------------------------------------------------
+[2026-08-31T17:20:54] HYBRID SEARCH (lexical + semantic) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 0.8627), ('National_Basketball_Association', 'National Basketball Association', 0.8379), ('1986_NBA_Finals', '1986 NBA Finals', 0.8118), ('1985_NBA_Finals', '1985 NBA Finals', 0.809), ('2019–20_NBA_season', '2019–20 NBA season', 0.802)]
+------------------------------------------------------------------------
+[2026-08-31T17:21:04] HYBRID SEARCH (lexical + semantic) | QUERY 1: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6736), ('Miasma_theory', 'Miasma theory', 0.5551), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3643), ('World_War_I', 'World War I', 0.2978)]
+answer=The outbreak was caused by contaminated water from the Broad Street pump. The document says the cause was: **“Vibrio cholerae present within the pumping water due to contamination by sewage.”** It also says Snow identified **“the public water pump on Broad Street”** as the source, and later it was discovered the well had been dug **“3 feet (0.9 m) from an old cesspit that had begun to leak faecal bacteria.”**
+------------------------------------------------------------------------
+[2026-08-31T17:21:33] HYBRID SEARCH (lexical + semantic) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6736), ('Miasma_theory', 'Miasma theory', 0.5551), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3643), ('World_War_I', 'World War I', 0.2978)]
+answer=The outbreak was caused by contaminated pump water. The document states the cause as: “**Vibrio cholerae present within the pumping water due to contamination by sewage**.”
+
+It also says the public well “had been dug 3 feet (0.9 m) from an old cesspit” that “had begun to leak faecal bacteria,” which contaminated the Broad Street pump water.
+------------------------------------------------------------------------
+[2026-08-31T17:23:57] HYBRID SEARCH (lexical + semantic) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6622), ('Miasma_theory', 'Miasma theory', 0.4908), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3433), ('City_of_London', 'City of London', 0.2473)]
+answer=The 1854 Broad Street cholera outbreak was a severe cholera outbreak in Soho, London, in 1854. The document says:
+
+- “A severe outbreak of cholera occurred in 1854 near Broad Street (now Broadwick Street) and Golden Square in Soho, London, England”
+- It “killed 616 people”
+- It is “best known for the physician John Snow’s study of its causes and his hypothesis that germ-contaminated water was the cause, rather than something in the air called ‘miasma.’”
+
+John Snow identified the source as “the public water pump on Broad Street,” and the authorities removed the pump handle.
+
+If you want, I can also summarize the outbreak in one sentence or give a timeline from the document.
+------------------------------------------------------------------------
+[2026-08-31T17:24:31] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 0.589), ('Alaska', 'Alaska', 0.4488), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.3187), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.2883), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.2075)]
+------------------------------------------------------------------------
+[2026-08-31T17:25:50] HYBRID SEARCH (lexical + semantic) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.8886), ('1984_NBA_Finals', '1984 NBA Finals', 0.8626), ('2019–20_NBA_season', '2019–20 NBA season', 0.8233), ('1989_NBA_Finals', '1989 NBA Finals', 0.8081), ('1986_NBA_Finals', '1986 NBA Finals', 0.8078)]
+------------------------------------------------------------------------
+[2026-08-31T17:26:52] HYBRID SEARCH (lexical + semantic) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 1.0), ('Alaska', 'Alaska', 0.7796), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.6505), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.5256), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.4983)]
+answer=The 1964 Alaska earthquake is described in the documents as the **“Great Alaska earthquake”** and **“Good Friday earthquake.”** It **occurred on March 27, 1964, at 5:36 PM AKST**, had a **moment magnitude of 9.2–9.3**, and **lasted four minutes and thirty-eight seconds**.
+
+It caused major destruction across south-central Alaska, including tsunamis and landslides, and the documents say **“about 139 deaths”** resulted. The earthquake was also the **“second most powerful earthquake ever recorded in the world since modern seismography began in 1900.”**
+
+If you want, I can also summarize its damage, tsunami effects, or aftermath from the documents.
+------------------------------------------------------------------------
+[2026-08-31T17:29:29] HYBRID SEARCH (lexical + semantic) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6736), ('Miasma_theory', 'Miasma theory', 0.5551), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3643), ('World_War_I', 'World War I', 0.2978)]
+answer=The outbreak was caused by contaminated water from the Broad Street pump. The document says the cause was:
+
+> “Vibrio cholerae present within the pumping water due to contamination by sewage.”
+
+It also says Snow identified “the source of the outbreak as the public water pump on Broad Street,” and later it was discovered that “this public well had been dug 3 feet (0.9 m) from an old cesspit” that had begun to leak faecal bacteria.
+------------------------------------------------------------------------
+[2026-08-31T17:29:56] HYBRID SEARCH (lexical + semantic) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 0.8627), ('National_Basketball_Association', 'National Basketball Association', 0.8379), ('1986_NBA_Finals', '1986 NBA Finals', 0.8118), ('1985_NBA_Finals', '1985 NBA Finals', 0.809), ('2019–20_NBA_season', '2019–20 NBA season', 0.802)]
+------------------------------------------------------------------------
+[2026-08-31T17:30:55] HYBRID SEARCH (lexical + semantic) | QUERY 1: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6736), ('Miasma_theory', 'Miasma theory', 0.5551), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3643), ('World_War_I', 'World War I', 0.2978)]
+answer=The documents say the outbreak was caused by cholera bacteria in the pump water, which was contaminated by sewage. Specifically, the Broad Street outbreak page lists the cause as: **“Vibrio cholerae present within the pumping water due to contamination by sewage.”**
+
+It also says the public well had been dug **“3 feet (0.9 m) from an old cesspit”** that **“had begun to leak faecal bacteria.”**
+------------------------------------------------------------------------
+[2026-08-31T17:30:58] HYBRID SEARCH (lexical + semantic) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6622), ('Miasma_theory', 'Miasma theory', 0.4908), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3433), ('City_of_London', 'City of London', 0.2473)]
+------------------------------------------------------------------------
+[2026-08-31T17:33:20] HYBRID SEARCH (lexical + semantic) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 1.0), ('Alaska', 'Alaska', 0.7796), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.6505), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.5256), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.4983)]
+answer=The documents say the **1964 Alaska earthquake** “occurred at 5:36 PM AKST on Good Friday, March 27, 1964.”
+
+Key facts from the documents:
+- It was also called the **“Great Alaska earthquake”** and **“Good Friday earthquake.”**
+- Its magnitude was **Mw 9.2–9.3**.
+- It lasted **4 minutes and 38 seconds**.
+- It is described as “the **second most powerful earthquake ever recorded in the world** since modern seismography began in 1900.”
+- It caused about **139 deaths**.
+
+If you want, I can also give a short summary of the damage, tsunami, or recovery efforts from the documents.
+------------------------------------------------------------------------
+[2026-08-31T17:33:32] HYBRID SEARCH (lexical + semantic) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.8886), ('1984_NBA_Finals', '1984 NBA Finals', 0.8626), ('2019–20_NBA_season', '2019–20 NBA season', 0.8233), ('1989_NBA_Finals', '1989 NBA Finals', 0.8081), ('1986_NBA_Finals', '1986 NBA Finals', 0.8078)]
+------------------------------------------------------------------------
+[2026-08-31T18:02:45] HYBRID SEARCH (lexical + semantic) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6736), ('Miasma_theory', 'Miasma theory', 0.5551), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3643), ('World_War_I', 'World War I', 0.2978)]
+------------------------------------------------------------------------
+[2026-08-31T20:08:20] HYBRID SEARCH (lexical + semantic) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6622), ('Miasma_theory', 'Miasma theory', 0.4908), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3433), ('City_of_London', 'City of London', 0.2473)]
+------------------------------------------------------------------------
+[2026-08-31T20:14:23] HYBRID SEARCH (lexical + semantic) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 1.0), ('Alaska', 'Alaska', 0.7796), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.6505), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.5256), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.4983)]
+------------------------------------------------------------------------
+[2026-08-31T20:16:05] HYBRID SEARCH (lexical + semantic) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6736), ('Miasma_theory', 'Miasma theory', 0.5551), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3643), ('World_War_I', 'World War I', 0.2978)]
+------------------------------------------------------------------------
+[2026-08-31T20:19:45] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 29.06), ('1985_NBA_Finals', '1985 NBA Finals', 26.387), ('1986_NBA_Finals', '1986 NBA Finals', 25.94), ('1981_NBA_Finals', '1981 NBA Finals', 25.92), ('1983_NBA_Finals', '1983 NBA Finals', 25.884)]
+answer=The **1984 NBA Finals** were won by the **Boston Celtics**, who defeated the **Los Angeles Lakers** **4–3**.
+
+From the document:
+- “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games.**”
+- “**Celtics forward Larry Bird averaged 27 points and 14 rebounds a game during the series, earning the NBA Finals Most Valuable Player (MVP).**”
+- “**After alternating wins with the Lakers, the Celtics won Game 7 and the series with a score of 111–102.**”
+------------------------------------------------------------------------
+[2026-08-31T20:19:49] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 37.194), ('1989_NBA_Finals', '1989 NBA Finals', 34.115), ('1988_NBA_Finals', '1988 NBA Finals', 33.985), ('1981_NBA_Finals', '1981 NBA Finals', 33.907), ('1985_NBA_Finals', '1985 NBA Finals', 33.788)]
+answer=The Boston Celtics won the 1984 NBA Finals. The document says: “The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games.”
+------------------------------------------------------------------------
+[2026-08-31T20:19:54] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 56.363), ('John_Snow', 'John Snow', 41.226), ('Miasma_theory', 'Miasma theory', 36.924), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 30.148), ('Helen_Clark', 'Helen Clark', 21.874)]
+answer=The 1854 Broad Street cholera outbreak was “a severe outbreak of cholera” in Soho, London, in 1854. It “killed 616 people.” The documents say it is “best known for the physician John Snow’s study of its causes” and his hypothesis that “germ-contaminated water was the cause, rather than something in the air called ‘miasma.’”
+
+Key details from the documents:
+- Date and place: “1854” in “Soho, London, UK”
+- Deaths: “616”
+- Cause listed: “Vibrio cholerae present within the pumping water due to contamination by sewage”
+- John Snow identified “the public water pump on Broad Street” as the source
+- The pump handle was removed, and “the handle of the pump was removed on the following day”
+
+If you want, I can also summarize the outbreak in one sentence or explain John Snow’s investigation from the documents.
+------------------------------------------------------------------------
+[2026-08-31T20:19:59] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 65.502), ('John_Snow', 'John Snow', 47.952), ('Miasma_theory', 'Miasma theory', 46.349), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 39.769), ('Helen_Clark', 'Helen Clark', 28.984)]
+answer=The document says the cause was **“Vibrio cholerae present within the pumping water due to contamination by sewage.”** It also explains that the pump was connected to an old cesspit: **“this public well had been dug 3 feet (0.9 m) from an old cesspit that had begun to leak faecal bacteria.”**
+------------------------------------------------------------------------
+[2026-08-31T20:20:05] TEXT-BASED SEARCH (BM25-style lexical baseline) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 30.049), ('Alaska', 'Alaska', 23.779), ('Lists_of_earthquakes', 'Lists of earthquakes', 21.737), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 19.264), ('John_Muir', 'John Muir', 18.183)]
+answer=The documents say the **1964 Alaska earthquake** was a **magnitude 9.2–9.3 megathrust earthquake** that occurred on **Good Friday, March 27, 1964**.
+
+A few key facts from the documents:
+- It was the **“second most powerful earthquake ever recorded in the world”** and the **most powerful in recorded North American history**.
+- It lasted **“4–5 minutes”** / **“four minutes and thirty-eight seconds”**.
+- It caused about **139 deaths**.
+- It generated major tsunamis, including a **“run-up of 67 m (220 ft) at Shoup Bay, Alaska.”**
+
+If you want, I can also summarize its causes, impacts, or recovery efforts using only the documents.
+------------------------------------------------------------------------
+[2026-08-31T20:22:05] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 1: 1984 NBA Finals
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5515), ('2019–20_NBA_season', '2019–20 NBA season', 0.5047), ('2020–21_NBA_season', '2020–21 NBA season', 0.4632), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4094), ('1986_NBA_Finals', '1986 NBA Finals', 0.3808)]
+answer=The documents do not contain a page or details for the **1984 NBA Finals**, so I can’t answer from the provided text alone.
+------------------------------------------------------------------------
+[2026-08-31T20:24:11] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.5901), ('2019–20_NBA_season', '2019–20 NBA season', 0.5192), ('2020–21_NBA_season', '2020–21 NBA season', 0.4736), ('Race_and_ethnicity_in_the_NBA', 'Race and ethnicity in the NBA', 0.4557), ('1986_NBA_Finals', '1986 NBA Finals', 0.4074)]
+answer=The documents do not say who won the **1984 NBA Finals**.
+
+They do say that the **1986 NBA Finals** were won by the **Boston Celtics**, who “defeated the Rockets four games to two to win their then-record 16th NBA championship,” but there is no direct answer for 1984 in the provided documents.
+------------------------------------------------------------------------
+[2026-08-31T20:26:19] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5804), ('John_Snow', 'John Snow', 0.3241), ('Miasma_theory', 'Miasma theory', 0.1418), ('List_of_tallest_buildings_in_San_Francisco', 'List of tallest buildings in San Francisco', 0.0633), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.0467)]
+answer=The documents describe the **1854 Broad Street cholera outbreak** as a “**severe outbreak of cholera that occurred in 1854 near Broad Street … in Soho, London**” and say it “**killed 616 people**.”
+
+It was “**best known for the physician John Snow’s study of its causes**” and his hypothesis that “**germ-contaminated water was the cause, rather than something in the air called ‘miasma.’**”
+
+If you want, I can also summarize John Snow’s investigation or the outbreak’s significance.
+------------------------------------------------------------------------
+[2026-08-31T20:28:26] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 0.5968), ('John_Snow', 'John Snow', 0.3496), ('Miasma_theory', 'Miasma theory', 0.1947), ('The_Wolf_of_Wall_Street_(2013_film)', 'The Wolf of Wall Street (2013 film)', 0.1006), ('City_of_London', 'City of London', 0.089)]
+answer=The outbreak was caused by contaminated water from the Broad Street pump. The document says the cause was:
+
+> “Vibrio cholerae present within the pumping water due to contamination by sewage”
+
+It also says Snow identified “the public water pump on Broad Street” as the source, and later it was discovered that the well had been dug near “an old cesspit” that “had begun to leak faecal bacteria.”
+------------------------------------------------------------------------
+[2026-08-31T20:30:36] SEMANTIC SEARCH (TF-IDF cosine similarity) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 0.589), ('Alaska', 'Alaska', 0.4488), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.3187), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.2883), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.2075)]
+answer=The documents say the **1964 Alaska earthquake** “occurred at 5:36 PM AKST on Good Friday, March 27, 1964,” and it was also called the **“Great Alaska earthquake”** and **“Good Friday earthquake.”** It was a **magnitude 9.2–9.3 megathrust earthquake** and “lasted four minutes and thirty-eight seconds.”
+
+If you want, I can also give a short summary of its causes, damage, casualties, or aftermath using the provided documents.
+------------------------------------------------------------------------
+[2026-08-31T20:32:49] HYBRID SEARCH (lexical + semantic) | QUERY 1: 1984 NBA Finals
+retrieved=[('1984_NBA_Finals', '1984 NBA Finals', 0.8627), ('National_Basketball_Association', 'National Basketball Association', 0.8379), ('1986_NBA_Finals', '1986 NBA Finals', 0.8118), ('1985_NBA_Finals', '1985 NBA Finals', 0.809), ('2019–20_NBA_season', '2019–20 NBA season', 0.802)]
+answer=The 1984 NBA Finals were won by the **Boston Celtics**, who defeated the **Los Angeles Lakers** **4–3**.
+
+From the document: “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games**,” and “**the Celtics won Game 7 and the series with a score of 111–102.**”
+
+The Finals MVP was **Larry Bird**.
+------------------------------------------------------------------------
+[2026-08-31T20:34:56] HYBRID SEARCH (lexical + semantic) | QUERY 2: Who won the 1984 NBA Finals?
+retrieved=[('National_Basketball_Association', 'National Basketball Association', 0.8886), ('1984_NBA_Finals', '1984 NBA Finals', 0.8626), ('2019–20_NBA_season', '2019–20 NBA season', 0.8233), ('1989_NBA_Finals', '1989 NBA Finals', 0.8081), ('1986_NBA_Finals', '1986 NBA Finals', 0.8078)]
+answer=The **Boston Celtics** won the 1984 NBA Finals. The document says, “**The Eastern Conference champion Boston Celtics defeated the Western Conference champion Los Angeles Lakers in seven games**,” and the series summary shows “**Boston wins the series, 4–3**.”
+------------------------------------------------------------------------
+[2026-08-31T20:37:07] HYBRID SEARCH (lexical + semantic) | QUERY 3: 1854 Broad Street cholera outbreak
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6622), ('Miasma_theory', 'Miasma theory', 0.4908), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3433), ('City_of_London', 'City of London', 0.2473)]
+answer=The documents say the 1854 Broad Street cholera outbreak was:
+
+- “a severe outbreak of cholera … in Soho, London, England, during the worldwide 1846–1860 cholera pandemic”
+- it “killed 616 people”
+- it is “best known for the physician John Snow’s study of its causes and his hypothesis that germ-contaminated water was the cause, rather than something in the air called ‘miasma.’”
+
+John Snow and others linked it to the Broad Street pump: “the source of the outbreak as the public water pump on Broad Street,” and the handle was removed.
+
+If you want, I can also give a 1-sentence summary or a fuller explanation from the documents.
+------------------------------------------------------------------------
+[2026-08-31T20:39:10] HYBRID SEARCH (lexical + semantic) | QUERY 4: What caused the 1854 Broad Street cholera outbreak?
+retrieved=[('1854_Broad_Street_cholera_outbreak', '1854 Broad Street cholera outbreak', 1.0), ('John_Snow', 'John Snow', 0.6736), ('Miasma_theory', 'Miasma theory', 0.5551), ('2009_swine_flu_pandemic', '2009 swine flu pandemic', 0.3643), ('World_War_I', 'World War I', 0.2978)]
+answer=The documents say the cause was:
+
+- “**Vibrio cholerae present within the pumping water due to contamination by sewage**”  
+- and that the public well “**had been dug 3 feet (0.9 m) from an old cesspit that had begun to leak faecal bacteria**.”
+
+So, according to the documents, the outbreak was caused by **sewage-contaminated water from the Broad Street pump**.
+------------------------------------------------------------------------
+[2026-08-31T20:41:14] HYBRID SEARCH (lexical + semantic) | QUERY 5: 1964 Alaska earthquake
+retrieved=[('1964_Alaska_earthquake', '1964 Alaska earthquake', 1.0), ('Alaska', 'Alaska', 0.7796), ('Lists_of_earthquakes', 'Lists of earthquakes', 0.6505), ('2011_Tōhoku_earthquake_and_tsunami', '2011 Tōhoku earthquake and tsunami', 0.5256), ('United_States_presidential_elections_in_Alaska', 'United States presidential elections in Alaska', 0.4983)]
+answer=The documents say the **1964 Alaska earthquake** “occurred at **5:36 PM AKST on Good Friday, March 27, 1964**.” It was also called the “**Great Alaska earthquake**” and the “**Good Friday earthquake**.”
+
+Key facts from the documents:
+- Magnitude: “**M w 9.2–9.3**”
+- Duration: “**Lasting four minutes and thirty-eight seconds**”
+- Deaths: “**139 deaths**”
+- It was “**the second most powerful earthquake ever recorded in the world since modern seismography began in 1900**”
+
+If you want, I can also summarize its tsunami, damage, or impact on Alaska.
+------------------------------------------------------------------------
